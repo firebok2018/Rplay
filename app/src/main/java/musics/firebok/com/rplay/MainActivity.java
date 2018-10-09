@@ -61,11 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Toast.makeText(MainActivity.this, "Seleccionado"+id +" " +position, Toast.LENGTH_SHORT).show();
-                mp = new MediaPlayer();
-                if (!mp.isPlaying()) {
-                } else if (mp.isPlaying()) {
-                     mp.pause();
-                }
+                startActivity(new Intent(getApplicationContext(),PlaySong.class).putExtra("pos",position).putExtra("listSong",arrayList));//llama al layout del reporoductor y laa cllas reproductor
 
                 Toast.makeText(MainActivity.this, "sixe"+ arraylist.size(), Toast.LENGTH_SHORT).show();
                 Toast.makeText(MainActivity.this, "position"+ arraylist.get(position), Toast.LENGTH_SHORT).show();
